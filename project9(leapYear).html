@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leap Year</title>
+    <style>
+        body{
+            color: rgb(17, 16, 16);
+            margin: 0;
+            padding: 0;
+            font-weight: bolder;
+        }
+        *{
+            box-sizing: border-box;
+        }
+        H1{
+            text-align: center;
+            margin: 2em;
+        }
+
+        #myform{
+            /* border: 2px solid red; */
+           
+            width: 80%;
+            margin: 0 auto;
+            margin: 1em;
+            padding: 1em;
+            
+        }
+        .main__div{
+            display: grid;
+            place-items: center;
+            border: 2px solid gold;
+            background: rgb(228, 148, 148);
+           
+            width: 80%;
+            margin: 0 auto;
+            position: absolute;
+            top: 30%;
+            left: 10%;
+            
+        }
+        #btn{
+            display: grid;
+            place-items: center;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="main__div">
+
+        <h1>LEAP YEAR FINDER</h1>
+        <div class="container">
+            
+            
+            <form action="" id='myform'>
+                <input type="text" id = "mytext" name="text" placeholder="enter an year">
+                <button id='btn'>Submit</button>
+                
+        </form>
+    </div>
+</div>
+    <script>
+        let year = document.getElementById('mytext');
+        year.addEventListener('oninput', function(){
+
+            let yr = this.value;
+            if(isNaN(yr)){
+                alert('please enter number only');
+            }
+            else{
+            yr = yr;
+            }
+            // debugger;
+        });
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click', function()
+        { 
+            // debugger;
+            if((year.value%4) == 0){
+                if ((year.value%100) == 0) {
+                    if ((year.value%400) == 0) {
+                        alert(`the year ${year.value} is a leap year`);
+                        
+                    }
+                    else{
+                        alert(`the year ${year.value} is not a leap year`);
+                    }
+                    
+                }
+                else{
+                    alert(`the year ${year.value} is a leap year`);
+                }
+            }
+            else{
+                alert(`the year ${year.value} is not a leap year`);
+            }
+            // console.log(yr);
+        });
+    </script>
+    
+</body>
+</html>
